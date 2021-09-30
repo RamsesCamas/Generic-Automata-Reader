@@ -1,3 +1,5 @@
+from tkinter import messagebox
+
 class DFA:
     def __init__(self) -> None:
         pass
@@ -7,11 +9,11 @@ class DFA:
         try:
             assert(key in DFA["S"])
         except AssertionError:
-            print(f'El Símbolo {key} no se encuentra en el alfabeto')
+            messagebox.showerror(title='No encontrado',message=f'El Símbolo {key} no se encuentra en el alfabeto')
         try:
             assert(q in DFA["Q"])
         except AssertionError:
-            print(f'El Estado {key} no se encuentra en el Autómata')
+            messagebox.showerror(title='No encontrado',message=f'El Estado {q} no se encuentra en el Autómata')
         try:
             return DFA["D"][(q,key)]
         except KeyError:

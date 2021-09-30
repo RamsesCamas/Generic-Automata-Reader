@@ -1,3 +1,5 @@
+from tkinter import messagebox
+
 class NFA:
     def __init__(self) -> None:
         pass
@@ -8,7 +10,7 @@ class NFA:
         else:
             letter = string[0]
             if letter not in sigma:
-                print(f'El símbolo {letter} no está en el alfabeto')
+                messagebox.showerror(title='No encontrado',message=f'El símbolo {letter} no está en el alfabeto')
                 return False
             key = (current, letter)
             epsilon = False
@@ -32,7 +34,7 @@ class NFA:
         else:
             letter = string[0]
             if letter not in NFA['S']:
-                print(f'El símbolo {letter} no está en el alfabeto')
+                messagebox.showerror(title='No encontrado',message=f'El símbolo {letter} no está en el alfabeto')
                 return False
             key = (NFA['q0'], letter)
             epsilon = False
