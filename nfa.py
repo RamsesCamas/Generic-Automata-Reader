@@ -15,7 +15,7 @@ class NFA:
             key = (current, letter)
             epsilon = False
             if key not in edges:
-                key = (current, '')
+                key = (current, 'epsilon')
                 epsilon = True
             if key in edges:
                 if epsilon:
@@ -39,7 +39,7 @@ class NFA:
             key = (NFA['q0'], letter)
             epsilon = False
             if key not in NFA['D']:
-                key = (NFA['q0'], '')
+                key = (NFA['q0'], 'epsilon')
                 epsilon = True
             if key in NFA['D']:
                 if epsilon:
