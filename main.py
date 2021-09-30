@@ -56,7 +56,6 @@ def read_automata(filename):
         'q0':Auto_model['q0'],
         'F': final
     }
-    print(Auto_model['D'])
     return Auto_model,type_automata
 
 def run_automata(automata,automata_type,string):
@@ -74,7 +73,7 @@ def run_automata(automata,automata_type,string):
 
 def open_file_automata():
     global filename
-    filename = filedialog.askopenfilename(initialdir='./',title='Seleccionar un archivo',filetypes=(('text files','*.txt'),('all files',"*.*")))
+    filename = filedialog.askopenfilename(initialdir='./',title='Seleccionar un archivo',filetypes=(('Archivos de texto','*.txt'),('all files',"*.*")))
     btn_process_word['state'] = 'active'
 
 def start_automata():
